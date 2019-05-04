@@ -51,7 +51,6 @@ refreshing: false
  hideTab = () => {
     this.setState({ isFeed: true });
     this.setState({ isFav: false });
-    
     }
     
     

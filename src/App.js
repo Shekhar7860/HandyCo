@@ -9,6 +9,13 @@ import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword';
 import SideMenu from './components/SideMenu';
 import SplashScreen from 'react-native-splash-screen'
+import BookingRequests from './components/BookingRequests';
+import SetAvailability from './components/SetAvailability';
+import SetSlots from './components/SetSlots';
+import Settings from './components/Settings';
+import SetPostalCode from './components/SetPostalCode';
+import SetServiceType from './components/SetServiceType';
+import BookingDetails from './components/BookingDetails';
 
 // Sidemenu
 export const Menu = DrawerNavigator({
@@ -27,7 +34,14 @@ const AppNavigator = StackNavigator(
     Login: { screen: Login},
     Home: { screen: Menu},
     SignUp: { screen: SignUp},
-    ForgotPassword:{ screen : ForgotPassword}
+    ForgotPassword:{ screen : ForgotPassword},
+    BookingRequests : { screen: BookingRequests},
+    SetAvailability : { screen : SetAvailability},
+    SetSlots : { screen: SetSlots},
+    SetPostalCode : { screen : SetPostalCode},
+    SetServiceType : { screen: SetServiceType},
+    Settings:{ screen : Settings},
+    BookingDetails:{ screen : BookingDetails}
   },
   { headerMode: 'none' }
 );

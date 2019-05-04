@@ -71,8 +71,25 @@ logOut = () =>{
 exit = () => {
   this.props.navigation.navigate('Login')
 }
+
+
 alertItemName = (item) => {
-  alert(item.name)
+  switch(item.name) {
+    case 'Booking Requests':
+     this.props.navigation.navigate("BookingRequests");
+     break;
+     case 'Set Availability':
+     this.props.navigation.navigate("SetAvailability");
+     break;
+     case 'Set Slots':
+     this.props.navigation.navigate("SetSlots");
+     break;
+     case 'Settings':
+     this.props.navigation.navigate("Settings");
+     break;
+    default:
+    this.props.navigation.navigate(item.name);
+  }
 }
 componentDidMount() {
 //  console.log('newVal', service.getUserData('user'))
@@ -163,7 +180,7 @@ componentDidMount() {
                         </TouchableOpacity>
                         <View style={styles.listItemsBlank}></View>
                         <View style={styles.listTextWidth}>
-                           <Text style={styles.listTextFontSize}>{item.name}</Text>
+                           <Text style={styles.listTextFontSizeSide}>{item.name}</Text>
                         </View>
                      </View>
                   </TouchableOpacity>
@@ -175,7 +192,7 @@ componentDidMount() {
                           <Image source={constants.notificationIcon} style={styles.shareIcon}/>
                         </TouchableOpacity>
                         <View style={styles.listTextNotifications}>
-                           <Text style={styles.listTextFontSize}>Available</Text>
+                           <Text style={styles.listTextFontSizeSide}>Available</Text>
                         </View>
                         <TouchableOpacity style={styles.listToggleIconsWidth2}>
                         <Switch style={styles.switch}

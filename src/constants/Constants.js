@@ -27,5 +27,9 @@ export default class Constants  {
   notificationIcon =  require('../images/notification.png');
   toggleIcon=  require('../images/off.png');
   cameraIcon=  require('../images/cemra.png');
+  checked=  require('../images/tick.png');
+  clockIcon =  require('../images/clock.png');
+  rightIcon =  require('../images/right.png');
+  downIcon =  require('../images/down.png');
   forwardArrowIcon=  require('../images/forwardarrow.png');
 }

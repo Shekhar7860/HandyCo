@@ -84,9 +84,9 @@ export default class SignuUp extends Component {
         source={constants.background}
         style={styles.container}>
           <View style={styles.imgContainer}>
-          <TouchableNativeFeedback onPress={() => this.goToLogin()}>
+          <TouchableOpacity onPress={() => this.goToLogin()}>
           <Image source={constants.backicon} style={styles.icon}/>
-          </TouchableNativeFeedback>
+          </TouchableOpacity>
           </View>
           <View style={styles.imageContainer}>
               <Image
@@ -144,9 +144,9 @@ export default class SignuUp extends Component {
       </View>
       </View>
            <View style={styles.loginContainer} >
-            <TouchableNativeFeedback style={styles.buttonWidth} onPress={() => this.signUp()}>
+            <TouchableOpacity style={styles.buttonWidth} onPress={() => this.signUp()}>
               <Text style={styles.signUpButton} >SIGN UP</Text>
-            </TouchableNativeFeedback>
+            </TouchableOpacity>
              </View>
              <View style={styles.toast}>
              <CustomToast ref = "defaultToastBottom"/>

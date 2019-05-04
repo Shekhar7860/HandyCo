@@ -238,11 +238,170 @@ icon:{
   width:20,
   height:20
 },
+
 myRow :{
+  flexDirection : 'row',
+  flex:1,
+  width :'100%'
+},
+myRowCheckBox :{
+  flexDirection : 'row',
+  marginTop:5,
+  width :'95%',
+  alignSelf : 'center'
+},
+borderList :{
+  flexDirection : 'row',
+  borderTopWidth:1,
+  borderBottomWidth:1,
+  borderTopColor:'#95a5a6',
+  borderBottomColor:'#95a5a6',
+  height :20
+},
+viewBackground : {
+backgroundColor : '#95a5a6',
+marginTop:5
+},
+middleRow : {
   flexDirection : 'row'
+},
+
+emptySwitch : {
+  width : '40%'
+},
+switchWidth : {
+  width : '20%'
+},
+viewBackgroundMorning : {
+  backgroundColor : '#95a5a6',
+  marginTop:5,
+  flexDirection :'row'
+  },
+  viewBackgroundAfternoon : {
+    backgroundColor : '#95a5a6',
+    marginTop:25,
+    flexDirection :'row'
+    },
+    bookingContent : {
+      alignItems : 'center', marginTop : 20
+    },
+    bookingText : {
+     fontSize : 21,
+    },
+    line : {
+     width : '70%',
+     alignSelf : 'center',
+     borderBottomWidth : 2,
+     marginTop:10
+    },
+    line2 : {
+      width : '100%',
+      alignSelf : 'center',
+      borderBottomWidth : 1,
+      marginTop:10
+     },
+  bold : {
+    fontWeight : 'bold'
+  },
+  buttonemptyWidth :{
+    width : '20%'
+  },
+  buttonInRow : {
+    marginTop:15,
+    flexDirection : 'row'
+  },
+  confirmButton : {
+  width : '25%'
+  },
+  cancelButton : {
+    width : '25%'
+  },
+
+  bookingButton : {
+    alignSelf : 'center',
+   marginTop:10,
+   width : '80%'
+  },
+    viewBackgroundEvening : {
+      backgroundColor : '#95a5a6',
+      marginTop:25,
+      flexDirection :'row'
+      },
+      viewBackgroundNight : {
+        backgroundColor : '#95a5a6',
+        marginTop:25,
+        flexDirection :'row'
+        },
+textViewAvailability : {
+  margin :5,
+  fontSize :17
+},
+viewTextWidth  : {
+  width : '40%'
 },
 emptySpace : {
   width: '5%'
+},
+imageClock : {
+  marginTop : 10,
+  width:25,
+  height:25
+},
+imageClockBorder : {
+  width:25,
+  height:25
+},
+settingView : {
+  backgroundColor : '#95a5a6',
+  margin : 5,
+height :50,
+justifyContent : 'center',
+alignItems : 'center'
+},
+settingPageText : {
+fontSize : 20,
+color : colors.white
+}, 
+postalView : {
+  backgroundColor : colors.white,
+height :40,
+justifyContent : 'center',
+alignItems : 'center',
+borderBottomWidth :1
+},
+listTextFontSizeGUI : {
+fontSize : 20
+},
+imageTextRow : {
+  marginTop : 10, 
+flexDirection : 'row'
+},
+postalPageText : {
+fontSize : 20
+}, 
+firstText : {
+width : '30%'
+},
+arrowImage : {
+width :30,
+height : 30
+},
+emptyPostalView : {
+  width : '50%'
+},
+textMargin : {
+  marginTop : 10,
+  fontSize : 15
+},
+textMarginBorder : {
+  width : 80
+},
+checkboxWidth : {
+width : 25
+},
+
+textWidthCheckBox : {
+  width : 27
 },
 loginIcon:{
   width:20,
@@ -563,8 +722,14 @@ cardContainerSignUp:{
       textAlign: "left",
       display:'flex'
     },
+    listTextFontSizeSide:{
+      fontSize:20,
+      textAlign: "left",
+      display:'flex',
+      color : 'white'
+    },
     switch:{
-      width:70
+      width:'20%'
     },
     cameraIcon:{
       position:'absolute', 
