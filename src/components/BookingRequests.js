@@ -140,7 +140,7 @@ export default class BookingRequests extends Component {
           </Button>
         </Left>
         <Body style={{ flex:3}}>
-          <Title  style={{color:'white'}}>Booking Requests</Title>
+          <Title   style={styles.itemCenter}>Booking Requests</Title>
         </Body>
         <Right>
           <Button

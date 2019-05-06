@@ -11,15 +11,30 @@ import {
   Title,
   Content,
   Button,
+  List,
+  ListItem,
   Icon,
   Left,
   Right,
   Body
 } from "native-base";
+
+const datas = [
+  "Simon Mignolet",
+  "Nathaniel Clyne",
+  "Dejan Lovren",
+  "Mama Sakho",
+  "Alberto Moreno",
+  "Emre Can",
+  "Joe Allen",
+  "Phil Coutinho"
+];
+
 export default class SetPostalCode extends Component {
 
   constructor(props){
     super(props);
+    constants = new Constants();
     this.state = { 
       email:'',
       password:'',
@@ -31,10 +46,12 @@ export default class SetPostalCode extends Component {
       mobileError:'',
       emailFormatError:'',
       loading: false,
-      cardheight:300
+      cardheight:300,
+      imgsource : constants.rightIcon,
+      list : false
     }
     service = new Service();
-    constants = new Constants();
+    
   }
 
   signUp = () =>{
@@ -88,6 +105,17 @@ export default class SetPostalCode extends Component {
    goBack = () =>{
     this.props.navigation.goBack();
    }
+
+   showHideList = () => {
+  if(this.state.list == false) {
+  this.setState({imgsource : constants.downIcon })
+  this.setState({list : true })
+  }
+  else {
+    this.setState({imgsource : constants.rightIcon })
+    this.setState({list : false })
+  }
+   }
   render() {
     return (
     
@@ -101,7 +129,7 @@ export default class SetPostalCode extends Component {
           </Button>
         </Left>
         <Body style={{ flex:3}}>
-          <Title  style={{color:'white'}}>Set Postal</Title>
+          <Title   style={styles.itemCenter}>Set Postal</Title>
         </Body>
         <Right>
           <Button
@@ -112,20 +140,37 @@ export default class SetPostalCode extends Component {
         </Right>
       </Header>
       <Content>
-         <TouchableOpacity style={styles.postalView} onPress = { () => this.openPostalPage()}>
+         <TouchableOpacity style={styles.postalView}>
           <Text style={styles.postalPageText}> List Of Postal Codes</Text>
         </TouchableOpacity>
-        <View style={styles.imageTextRow}>
+        <TouchableOpacity style={styles.imageTextRow} onPress = { () => this.showHideList()}>
         <View style={styles.emptySpace}>
         </View>
         <View style={styles.firstText}>
         <Text style={styles.listTextFontSizeGUI}>GUI District</Text>
       </View>
       <View style = {styles.emptyPostalView}></View>
-      <Image style={styles.arrowImage} source = {constants.rightIcon} />
-      </View>
+      <Image style={styles.arrowImage} source = {this.state.imgsource} />
+      </TouchableOpacity>
       <View style={styles.line2}>
       </View>
+      {this.state.list ? <View>
+        <List
+            dataArray={datas}
+            renderRow={data =>
+              <ListItem>
+                <Left>
+                  <Text>
+                    {data}
+                  </Text>
+                </Left>
+                <Right>
+                  <Icon name="arrow-forward" />
+                </Right>
+              </ListItem>}
+          />
+      </View> : null }
+      
       </Content>
       
       <CustomToast ref = "defaultToastBottom"/>

@@ -61,7 +61,7 @@ export default class Settings extends Component {
           </Button>
         </Left>
         <Body style={{ flex:3}}>
-          <Title  style={{color:'white'}}>Settings</Title>
+          <Title   style={styles.itemCenter}>Settings</Title>
         </Body>
         <Right>
           <Button

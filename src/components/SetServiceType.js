@@ -12,10 +12,25 @@ import {
   Content,
   Button,
   Icon,
+  List,
+  ListItem,
   Left,
   Right,
   Body
 } from "native-base";
+
+
+const datas = [
+  "Simon Mignolet",
+  "Nathaniel Clyne",
+  "Dejan Lovren",
+  "Mama Sakho",
+  "Alberto Moreno",
+  "Emre Can",
+  "Joe Allen",
+  "Phil Coutinho"
+];
+
 export default class SetServiceType extends Component {
 
   constructor(props){
@@ -31,60 +46,25 @@ export default class SetServiceType extends Component {
       mobileError:'',
       emailFormatError:'',
       loading: false,
-      cardheight:300
+      cardheight:300,
+      list : false,
+      imgsource : constants.rightIcon
     }
     service = new Service();
     constants = new Constants();
   }
 
-  signUp = () =>{
-    this.setState(() => ({ cardheight:370}));
-    if ( !service.validateEmail(this.state.email)) {
-      this.setState(() => ({ emailFormatError: "Proper Email Format is Required"}));
-    } 
-    else{
-      this.setState(() => ({ emailFormatError: ''}));
+  showHideList = () => {
+    if(this.state.list == false) {
+    this.setState({imgsource : constants.downIcon })
+    this.setState({list : true })
     }
-    if (this.state.email.trim() === "") {
-      this.setState(() => ({ emailError: " Email is required."}));
-      this.setState(() => ({ emailFormatError: null}));
-    } else {
-      this.setState(() => ({ emailError: null})); 
+    else {
+      this.setState({imgsource : constants.rightIcon })
+      this.setState({list : false })
     }
-    if (this.state.password.trim() === "") {
-      this.setState(() => ({ passwordError: " Password is required."}));
-    } else {
-      this.setState(() => ({ passwordError: null}));
-    }
-    if (this.state.mobile.trim() === "") {
-      this.setState(() => ({ mobileError: " Mobile Number is required."}));
-    } else {
-      this.setState(() => ({ mobileError: null}));
-    }
-    if (this.state.confirmPassword.trim() === "") {
-      this.setState(() => ({ confirmPasswordError: " Confirm Password is required."}));
-    } else {
-      this.setState(() => ({ confirmPasswordError: null}));
-    }
-    if(this.state.email && this.state.mobile && this.state.password && this.state.confirmPassword)
-    {
-      this.setState(() => ({ cardheight:300}));
-    }
-
-    if(this.state.email && this.state.password && this.state.mobile && this.state.confirmPassword && service.validateEmail(this.state.email))
-    {
-      
-     this.setState ({ loading: true});
-      setTimeout(() => 
-      {this.setState({loading: false})
-      this.refs.defaultToastBottom.ShowToastFunction('SignUp SuccessFully');
-      this.props.navigation.navigate('Login')
-       }, 3000)
-      }
-
+     }
   
-   // alert(this.state.password)
-   }
    goBack = () =>{
     this.props.navigation.goBack();
    }
@@ -101,7 +81,7 @@ export default class SetServiceType extends Component {
             </Button>
           </Left>
           <Body style={{ flex:3}}>
-            <Title  style={{color:'white'}}>Set Service Type</Title>
+            <Title  style={styles.itemCenter}>Set Service Type</Title>
           </Body>
           <Right>
             <Button
@@ -112,20 +92,36 @@ export default class SetServiceType extends Component {
           </Right>
         </Header>
         <Content>
-           <TouchableOpacity style={styles.postalView} onPress = { () => this.openPostalPage()}>
+           <View style={styles.postalView} >
             <Text style={styles.postalPageText}> List Of Service Types</Text>
-          </TouchableOpacity>
-          <View style={styles.imageTextRow}>
+          </View>
+          <TouchableOpacity style={styles.imageTextRow} onPress = { () => this.showHideList()}>
           <View style={styles.emptySpace}>
           </View>
-          <View style={styles.firstText}>
+          <View style={styles.firstText} >
           <Text style={styles.listTextFontSizeGUI}>GUI District</Text>
         </View>
         <View style = {styles.emptyPostalView}></View>
-        <Image style={styles.arrowImage} source = {constants.rightIcon} />
-        </View>
+        <Image style={styles.arrowImage} source = {this.state.imgsource} />
+        </TouchableOpacity>
         <View style={styles.line2}>
-        </View>
+      </View>
+      {this.state.list ? <View>
+        <List
+            dataArray={datas}
+            renderRow={data =>
+              <ListItem>
+                <Left>
+                  <Text>
+                    {data}
+                  </Text>
+                </Left>
+                <Right>
+                  <Icon name="arrow-forward" />
+                </Right>
+              </ListItem>}
+          />
+      </View> : null }
         </Content>
         
         <CustomToast ref = "defaultToastBottom"/>

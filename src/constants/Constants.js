@@ -17,9 +17,12 @@ export default class Constants  {
   defaultImage = require('../images/profile.png');
   logoutIcon =  require('../images/logout.png');
   shareIcon =  require('../images/share.png');
+  slotIcon =  require('../images/slot2.png');
+  settingsIcon =  require('../images/settings3.png');
   email2Icon =  require('../images/emailblack.png');
   starIcon =  require('../images/star.png');
-  homeIcon =  require('../images/home.png');
+  homeIcon =  require('../images/home3.png');
+  avaiIcon =  require('../images/setavailability.png');
   offerIcon =  require('../images/offer.png');
   favIcon =  require('../images/fav.png');
   creditIcon =  require('../images/credits.png');

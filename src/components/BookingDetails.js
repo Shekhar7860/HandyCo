@@ -96,7 +96,7 @@ export default class BookingDetails extends Component {
           </Button>
         </Left>
         <Body style={{ flex:3}}>
-          <Title  style={{color:'white'}}>BookingDetails</Title>
+          <Title  style={styles.itemCenter}>BookingDetails</Title>
         </Body>
         <Right>
           <Button

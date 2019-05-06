@@ -78,7 +78,7 @@ import {
             </Button>
           </Left>
           <Body style={{ flex:3}}>
-            <Title  style={{color:'white'}}>FORGOT PASSWORD</Title>
+            <Title  style={styles.itemCenter} >FORGOT PASSWORD</Title>
           </Body>
           <Right>
             <Button
@@ -96,13 +96,13 @@ import {
           <Text style={styles.resetPassText}>reset password  </Text>
           <View style={styles.rowMargin}>
              <View style={styles.rowAlignForgotPage}>
-             <View style={styles.bottomSpace}>
+           
              <Image source={constants.email2Icon} style={styles.forgotPageIcon}/>
              <View style={styles.emptySpace}></View>
              <TextInput  style={styles.textBoxFontForgot } placeholder="Email Id"  placeholderTextColor="black" value={this.state.email} onChangeText={(text)=>this.setState({ email:text})}></TextInput>
              </View>
              </View>
-             </View>
+            
              
              {!!this.state.emailError && (
             <Text style={styles.error}>{this.state.emailError}</Text>

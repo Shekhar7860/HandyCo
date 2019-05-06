@@ -40,12 +40,10 @@ export default styles = StyleSheet.create({
     },
     cardContainer:{
      width:'90%',
-   
+     marginTop: Platform.OS === 'ios' ? 20 : 0,
      padding:padding.sm,
      height:225,
      
-     marginTop:-padding.sm,
-     borderRadius:10
     }, 
     messageBox:{
       width:'90%',
@@ -142,11 +140,14 @@ toolbarTitle:{
   },
   rowMargin : {
     flex:1,
-     marginTop:80
+     marginTop:50
   },
   rowMargin2 : {
-    flex:1,
-     marginTop:60
+   
+  },
+  itemCenter : {
+    alignSelf : 'center',
+    color:'white'
   },
   borderWidthSignUp : {
     paddingTop:2,
@@ -277,6 +278,11 @@ viewBackgroundMorning : {
   marginTop:5,
   flexDirection :'row'
   },
+  viewBackgroundAfternoonSlots : {
+    backgroundColor : '#95a5a6',
+    marginTop:40,
+    flexDirection :'row'
+    },
   viewBackgroundAfternoon : {
     backgroundColor : '#95a5a6',
     marginTop:25,
@@ -405,13 +411,13 @@ textWidthCheckBox : {
 },
 loginIcon:{
   width:20,
-  height:20,
-  marginTop:12
+  height:25,
+  marginTop: Platform.OS === 'ios' ? -2 : 12
 },
 forgotPageIcon:{
   width:25,
   height:25,
-  marginTop:12
+  marginTop: Platform.OS === 'ios' ? -2 : 12
 },
 socialIcon:{
   width:40,
@@ -463,7 +469,7 @@ textIcon : {
 rowAlign:{
   flexDirection:'row',
   borderBottomColor: colors.white,
-  borderBottomWidth: 1,
+  borderBottomWidth: 1
 },
 rowAlignForgotPage:{
   alignSelf: 'center',
@@ -474,6 +480,12 @@ rowAlignForgotPage:{
 },
 loginContainer:{
   alignItems:align.center
+},
+footerView : {
+position : 'absolute',
+bottom : 20,
+width : '70%',
+alignSelf : 'center'
 },
 buttonWidth:{
   width:300,
@@ -713,9 +725,29 @@ cardContainerSignUp:{
     listToggleIconWidth2:{
       width:'5%'
     },
+    widthtWenty : {
+      width : '10%'
+    },
+    checkboxTextRow : {
+    width : '100%',
+    flexDirection : 'row',
+    marginTop : 10
+    },
+    widthcheckBox : {
+      flexDirection : 'row',
+      width : '42%',
+      height : 40,
+      backgroundColor : '#bdc3c7',
+      justifyContent : 'center',
+      alignItems : 'center'
+    },
     toggleIcon:{
       width:100,
       height:50
+    },
+    checkBoxTextWidth : {
+    margin :3,
+    fontSize:13
     },
     listTextFontSize:{
       fontSize:20,

@@ -162,13 +162,13 @@ export default class Login extends Component {
           <View style={styles.cardContainer}>
                     
                    
-                <View style={styles.rowMargin}>
+                
              <View style={styles.rowAlign}>
-             <View style={styles.bottomSpace}>
+           
              <Image source={constants.emailicon} style={styles.loginIcon}/>
              <View style={styles.emptySpace}></View>
              <TextInput  style={styles.textBoxFont } placeholder="Email ID"  placeholderTextColor="white" value={this.state.email} onChangeText={(text)=>this.setState({ email:text})}></TextInput>
-             </View>
+            
              </View>
              
              {!!this.state.emailError && (
@@ -177,13 +177,13 @@ export default class Login extends Component {
            
           
             <Text style={styles.error}>{this.state.emailFormatError}</Text>
-            <View style={styles.rowMargin2}>
+            
              <View style={styles.rowAlign}>
-             <View style={styles.bottomSpace}>
+            
              <Image source={constants.passwordicon} style={styles.loginIcon}/>
              <View style={styles.emptySpace}></View>
              <TextInput style={styles.textBoxFont } placeholder="Password"  placeholderTextColor="white" value={this.state.password}  secureTextEntry={true} onChangeText={(text)=> this.setState({ password:text})}></TextInput>
-             </View>
+             
             </View>
              {!!this.state.passwordError && (
             <Text style={styles.error}>{this.state.passwordError}</Text>
@@ -196,8 +196,8 @@ export default class Login extends Component {
              <TouchableOpacity style={styles.forgotTextContainer} onPress = { () => this.goToForgotPage()}>
              <Text style={styles.forgotPassText}>Forgot Password ?</Text>
              </TouchableOpacity>
-             </View>
-             </View>
+             
+             
             
      
       </View>

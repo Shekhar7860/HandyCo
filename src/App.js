@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
-import { BackHandler, Alert} from 'react-native';
+import { StackNavigator, DrawerNavigator, createBottomTabNavigator} from 'react-navigation';
+import { BackHandler, Alert, Image} from 'react-native';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Splash from './components/Splash';
@@ -18,10 +18,32 @@ import SetServiceType from './components/SetServiceType';
 import BookingDetails from './components/BookingDetails';
 
 // Sidemenu
-export const Menu = DrawerNavigator({
-  Home: { screen: Home},
-  SignUp: { screen: SignUp},
-  
+export const Menu = createBottomTabNavigator({
+    Home: { screen: Home, navigationOptions: {
+      tabBarLabel: 
+        'Home',
+        tabBarIcon : ({ tintColor }) => (<Image source={constants.homeIcon} style={styles.shareIcon} />)
+      
+    }},
+    SetAvailability : { screen : SetAvailability,
+      navigationOptions: {
+        tabBarLabel: 
+          'Set Availability',
+          tabBarIcon : ({ tintColor }) => (<Image source={constants.avaiIcon} style={styles.shareIcon} />)
+        
+      }},
+    SetSlots : { screen: SetSlots, navigationOptions: {
+      tabBarLabel: 
+        'Set Slots',
+        tabBarIcon : ({ tintColor }) => (<Image source={constants.slotIcon} style={styles.shareIcon} />)
+      
+    }},
+    Settings:{ screen : Settings, navigationOptions: {
+      tabBarLabel: 
+        'Settings',
+        tabBarIcon : ({ tintColor }) => (<Image source={constants.settingsIcon} style={styles.shareIcon} />)
+      
+    }}
 }, {
   contentComponent: SideMenu,
   drawerWidth: 300
@@ -72,6 +94,7 @@ export default class App extends Component {
    componentWillUnmount = () =>{
      BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
    }  
+
    handleBackButton = () => {
     if(this.state.navState.routeName == "Login")
     {

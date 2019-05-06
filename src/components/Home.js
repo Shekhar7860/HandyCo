@@ -72,13 +72,13 @@ refreshing: false
         <Header style={styles.headerBackGround}>
           <Left >
             <Button transparent >
-            <TouchableOpacity onPress={() => this.openDrawer()}>
-            <Image source={constants.menuicon} style={styles.hamburgerIcon} />
+            <TouchableOpacity >
+            <Image  style={styles.hamburgerIcon} />
              </TouchableOpacity>
             </Button>
           </Left>
           <Body style={{ flex:3}}>
-            <Title  style={{color:'white'}}>Home</Title>
+            <Title  style={styles.itemCenter}>Home</Title>
           </Body>
           <Right>
             <Button

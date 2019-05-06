@@ -243,7 +243,7 @@ export default class SetAvailability extends Component {
 </View>
 
 <View style={styles.viewBackgroundMorning }>
-<View style={styles.viewTextWidth}>
+        <View style={styles.viewTextWidth}>
         <Text style={styles.textViewAvailability}> Morning Shift</Text>
         </View>
         <View style={styles.emptySwitch}></View>
